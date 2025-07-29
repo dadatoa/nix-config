@@ -40,6 +40,7 @@
     inputs.nixvim.packages.${system}.default # # nixvim -> custom nix neovim configuration
     bat
     curl
+    eza
     fish
     fzf
     gh
