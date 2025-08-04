@@ -47,6 +47,7 @@
     stow
     telescope
     tmux
+    wezterm
     zoxide
   ];
 
@@ -61,7 +62,6 @@
       "ollama-app"
       "orbstack"
       "stats"
-      "wezterm"
     ];
     brews = [
       "git-graph" ## broken in nixpkgs
