@@ -21,6 +21,8 @@
     };
   };
 
+  services.tailscale.enable = true;
+
   environment.systemPackages = with pkgs; [
     # inputs.nixvim.packages.${system}.default # add neovim classic way with homebrew
     ansible
@@ -62,6 +64,7 @@
       "ollama-app"
       "orbstack"
       "stats"
+      "tuta-mail"
     ];
     brews = [
       "git-graph" ## broken in nixpkgs
