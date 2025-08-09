@@ -17,7 +17,7 @@
 
   ## custom configuration
   environment.systemPackages = with pkgs; [
-    neovim
+    # neovim
   ];
 
 }
