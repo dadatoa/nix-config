@@ -13,6 +13,9 @@
     wpa_supplicant
   ];
 
+  # mosh as an alrenative to ssh
+  programs.mosh.enable = true;
+
   # Avahi for auto discover based on hostname
   services = {
     avahi = {

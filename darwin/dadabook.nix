@@ -36,6 +36,7 @@
     glab
     lazygit
     lima
+    mosh
     nushell
     nmap
     nodejs
