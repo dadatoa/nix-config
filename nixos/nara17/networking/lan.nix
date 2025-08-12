@@ -1,5 +1,17 @@
-{ ... }:
+{ config
+, lib
+, ...
+}:
 {
+
+  networking.hostName = "nara17";
+
+  networking.firewall.enable = false;
+  # networking.interfaces."enp2s0".wakeOnLan.enable = true; # issue when rebuild?
+
+  ## manage network with systemd
+  networking.useNetworkd = true;
+  systemd.network.enable = true;
   systemd.network = {
     ## declare vlan
     netdevs = {
@@ -61,4 +73,13 @@
     };
   };
 
+  ## wireless
+  networking.wireless = {
+    enable = true;
+    secretsFile = "/etc/wpa_supplicant.conf";
+    interfaces = [
+      "wlp3s0"
+    ];
+    userControlled.enable = true;
+  };
 }

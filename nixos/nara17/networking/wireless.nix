@@ -21,7 +21,7 @@
     wantedBy = [ "multi-user.target" ];
     path = [ pkgs.wpa_supplicant ];
     script = ''
-      wpa_supplicant -c /etc/wpa_supplicant.conf -i wlp0s20f0u1   
+      wpa_supplicant -c /etc/wpa_supplicant.conf -i wlp3s0   
     '';
   };
 }
