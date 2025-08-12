@@ -53,7 +53,7 @@
         matchConfig.Name = "vlan66";
         # networkConfig.DHCP = "ipv4";
         address = [
-          "10.66.66.1/24"
+          "192.168.1.11/24"
           # "fd42:23:42:b865::1/64"
           # "fe80::1/64"
         ];
