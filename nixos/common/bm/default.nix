@@ -10,6 +10,7 @@
     btrfs-progs
     exfat
     hdparm
+    wpa_supplicant
   ];
 
   # Avahi for auto discover based on hostname

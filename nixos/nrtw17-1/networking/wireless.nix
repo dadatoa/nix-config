@@ -5,23 +5,25 @@
 
   networking.wireless = {
     enable = false;
-    # secretsFile = "/run/secrets/wireless.conf";
+    secretsFile = "/etc/wpa_supplicant.conf";
     interfaces = [
-      "wlp0s20f0u1"
+      "wlp3s0"
     ];
     userControlled.enable = true;
   };
 
 
   ## custom service to start wifi connection
-  systemd.services.wifi = {
+  systemd.services.mywifi = {
     enable = true;
     description = "custom wpa_supplicant";
     after = [ "multi-user.target" ];
     wantedBy = [ "multi-user.target" ];
     path = [ pkgs.wpa_supplicant ];
     script = ''
-      wpa_supplicant -c /etc/wpa_supplicant.conf -i wlp0s20f0u1   
+      /run/current-system/sw/bin/ip link set dev wlp3s0 up
+      /run/current-system/sw/bin/ifconfig wlp3s0 up
+      /run/current-system/sw/bin/wpa_supplicant -c /etc/wpa_supplicant.conf -i wlp3s0   
     '';
   };
 }
