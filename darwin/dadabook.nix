@@ -52,6 +52,10 @@
     tmux
     wezterm
     zoxide
+    ## charm
+    gum
+    skate
+    wishlist
   ];
 
   ## enable homebrew package manager
