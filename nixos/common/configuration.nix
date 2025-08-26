@@ -36,35 +36,7 @@
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    inputs.nixvim.packages.${system}.default # # nixvim -> custom nix neovim configuration
-    bat
-    curl
-    eza
-    fish
-    fzf
-    gh
-    git
-    git-graph
-    glab
-    just
-    lazygit
-    nfs-utils
-    nmap
-    python3Minimal
-    starship
-    stow
-    tmux
-    wezterm
-    wget
-    zoxide
-  ];
-
   # start ssh-agent
   programs.ssh.startAgent = true;
-
-  # enable tailscale on very host
-  services.tailscale.enable = true;
-  services.tailscale.openFirewall = true;
 
 }
