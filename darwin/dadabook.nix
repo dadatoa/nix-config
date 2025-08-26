@@ -35,6 +35,7 @@
     git
     glab
     lazygit
+    librewolf
     lima
     mosh
     nushell
