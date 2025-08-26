@@ -88,14 +88,8 @@
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
           packages = [
-            pkgs.glab
-            pkgs.gh
-            pkgs.git-graph
             pkgs.just
-            pkgs.zoxide
             pkgs.starship
-            pkgs.fzf
-            pkgs.lazygit
           ];
 	shellHook = ''
 	eval "$(starship init bash)"
