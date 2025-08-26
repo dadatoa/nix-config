@@ -1,14 +1,7 @@
 {
   description = "my nix configurations";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    nixvim = {
-      # url = "github:nix-community/nixvim";
-      url = "github:dadatoa/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     disko = {
       url = "github:nix-community/disko";
@@ -17,14 +10,13 @@
 
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
 
   outputs =
     { nixpkgs
-    , nixpkgs-unstable
     , nix-darwin
     , ...
     }@inputs:
@@ -50,7 +42,7 @@
           ];
         };
         ## virtual machines
-        orbnix-1 = nixpkgs-unstable.lib.nixosSystem {
+        orbnix-1 = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           specialArgs = { inherit inputs; };
           modules = [
@@ -59,13 +51,13 @@
         };
 
         ## physical machines
-        nrtw17-1 = nixpkgs.lib.nixosSystem {
+        nara17 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
             inputs.disko.nixosModules.default
-            (import ./nixos/nrtw17-1/storage/disko.nix { device = "/dev/nvme0n1"; })
-            ./nixos/nrtw17-1
+            (import ./nixos/nara17/disko.nix { device = "/dev/nvme0n1"; })
+            ./nixos/nara17/configuration.nix
           ];
         };
 
@@ -100,11 +92,14 @@
             pkgs.gh
             pkgs.git-graph
             pkgs.just
-            pkgs.fish
             pkgs.zoxide
+            pkgs.starship
             pkgs.fzf
             pkgs.lazygit
           ];
+	shellHook = ''
+	eval "$(starship init bash)"
+	'';
         };
       });
     };

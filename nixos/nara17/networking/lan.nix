@@ -1,29 +1,8 @@
 { ... }:
 {
-  networking.hostName = "nara17";
-
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  
-  networking.firewall.enable = false;
-  # networking.interfaces."enp2s0".wakeOnLan.enable = true; # issue when rebuild?
-
-  ## manage network with systemd
-  networking.useNetworkd = true;
-  systemd.network.enable = true;
-  
   systemd.network = {
     ## declare vlan
     netdevs = {
-      "20-vlan1" = {
-        netdevConfig = {
-          Kind = "vlan";
-          Name = "vlan1";
-          Description = "device config Access";
-        };
-        vlanConfig = {
-          Id = 1;
-        };
-      };
       "20-vlan100" = {
         netdevConfig = {
           Kind = "vlan";
