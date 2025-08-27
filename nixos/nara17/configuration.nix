@@ -31,19 +31,22 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   programs.mosh.enable = true;
-  
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     btrfs-progs
     git
+    glab
     neovim
     shpool
     starship
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    zoxide
     ## Charm Tools
     skate # database key-value pair
+    gum
   ];
 
   # List services that you want to enable:
