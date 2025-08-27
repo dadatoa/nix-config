@@ -62,7 +62,17 @@
     # authKeyParameters.preauthorized = true;
     extraUpFlags = [ "--ssh" "--advertise-tags=tag:testlab"];
   };
-
+  
+  ## enable mdns autodiscovery
+  services.avahi = {
+    publish = {
+      enable = true;
+      userServices = true;
+    };
+    enable = true;
+    openFirewall = true;
+    nssmdns4 = true;
+  };
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
