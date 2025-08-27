@@ -88,7 +88,9 @@
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
           packages = [
+            pkgs.glab
             pkgs.just
+            pkgs.lazygit
             pkgs.starship
           ];
 	shellHook = ''
