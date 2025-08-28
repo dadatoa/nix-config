@@ -41,6 +41,7 @@
     nushell
     nmap
     nodejs
+    podman
     # fastfetch
     # overmind # process manager
     rclone
