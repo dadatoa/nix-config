@@ -93,9 +93,9 @@
             pkgs.lazygit
             pkgs.starship
           ];
-	shellHook = ''
-	eval "$(starship init bash)"
-	'';
+          shellHook = ''
+          eval "$(starship init bash)"
+          '';
         };
       });
     };
