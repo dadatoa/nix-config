@@ -21,7 +21,8 @@
     };
   };
 
-  services.tailscale.enable = true;
+  # services.tailscale.enable = true;
+  # intall with tailscale standalone version
 
   environment.systemPackages = with pkgs; [
     # inputs.nixvim.packages.${system}.default # add neovim classic way with homebrew
