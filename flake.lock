@@ -84,7 +84,6 @@
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "85dbfc7aaf52ecb755f87e577ddbe6dbbdbc1054",
->>>>>>> 4938dc3 (flake.lock: Update)
         "type": "github"
       },
       "original": {
