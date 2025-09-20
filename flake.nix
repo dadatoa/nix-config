@@ -13,13 +13,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+
   };
 
   outputs =
-    { nixpkgs
-    , nix-darwin
-    , ...
-    }@inputs:
+    { nixpkgs, nix-darwin, nix-homebrew, ... }@inputs:
     let
 
       forAllSystems =

@@ -28,6 +28,7 @@
     # inputs.nixvim.packages.${system}.default # add neovim classic way with homebrew
     ansible
     bat
+    # container -> does not start, dont know why
     eza
     ext4fuse
     fish
@@ -42,7 +43,7 @@
     nushell
     nmap
     nodejs
-    # podman
+    podman
     # fastfetch
     # overmind # process manager
     rclone
@@ -65,19 +66,27 @@
   ## does not install homebrew, have to install with standard procedure on mac os
   homebrew = {
     enable = true;
+    taps = [
+      "slp/krun"
+    ];
     casks = [
-      "container"
       "ghostty"
       "karabiner-elements"
       "leader-key"
-      "ollama-app"
-      "orbstack"
+      # "ollama-app"
+      # "orbstack"
       "stats"
       "tuta-mail"
     ];
     brews = [
       "git-graph" ## broken in nixpkgs
       "neovim"
+      "llama.cpp"
+      ## microvm
+      "buildah" 
+      "libkrunfw" 
+      "libkrun" 
+      "krunvm"
     ];
   };
 }
