@@ -42,7 +42,7 @@
     nushell
     nmap
     nodejs
-    podman
+    # podman
     # fastfetch
     # overmind # process manager
     rclone
@@ -66,6 +66,7 @@
   homebrew = {
     enable = true;
     casks = [
+      "container"
       "ghostty"
       "karabiner-elements"
       "leader-key"
