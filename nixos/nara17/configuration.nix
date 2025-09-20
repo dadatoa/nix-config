@@ -14,8 +14,6 @@
       ./storage.nix
       ./users.nix
       ./virtualisation.nix
-      ## Timezone, locales and nixos basic settings define in on common config file
-      ../common/configuration.nix
     ];
 
   # Use the systemd-boot EFI boot loader.

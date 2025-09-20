@@ -57,6 +57,7 @@
           modules = [
             inputs.disko.nixosModules.default
             (import ./nixos/nara17/disko.nix { device = "/dev/nvme0n1"; })
+            ./nixos/baseConfig.nix
             ./nixos/nara17/configuration.nix
           ];
         };
