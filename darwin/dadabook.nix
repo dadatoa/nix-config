@@ -74,7 +74,7 @@
       "karabiner-elements"
       "leader-key"
       # "ollama-app"
-      # "orbstack"
+      "orbstack"
       "stats"
       "tuta-mail"
     ];
