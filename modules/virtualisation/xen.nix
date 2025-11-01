@@ -3,12 +3,8 @@
   ###
   ### Xen project boot options
   ###
-  boot.kernelParams = 
-  [
-    "intel_iommu=on"
-    ];
-
-  boot.initrd.systemd.enable = true; ## for booting xen 
+  boot.initrd.systemd.enable = true;
+  ## for booting xen 
   boot.initrd.kernelModules = 
   [
     "vfio_pci"

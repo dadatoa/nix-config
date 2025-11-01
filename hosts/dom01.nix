@@ -9,6 +9,7 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configurations/dom01.nix
+      ./filesystems/disko-dom01.nix
       ../modules/01-nixos.nix
       ../modules/administration.nix
       ../modules/virtualisation/xen.nix ## Xen config
@@ -18,7 +19,8 @@
   [
     ### xen special boot kernel param
     ### hide pci device wifi from dom0 to be abble to pass it on anther damain
-    "xen-pciback.hide=(03:00.0)"
+    # "xen-pciback.hide=(03:00.0)"
+    "intel_iommu=on"
     ];
 
   boot.loader.systemd-boot.netbootxyz.enable = true;

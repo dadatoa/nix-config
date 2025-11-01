@@ -18,6 +18,13 @@
 
   nix.settings.auto-optimise-store = true;
 
+  environment.systemPackages = with pkgs; [
+    pciutils
+    usbutils
+  ];
+
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  
   i18n = {
     defaultLocale = "fr_FR.UTF-8";
     extraLocaleSettings = {

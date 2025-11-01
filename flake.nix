@@ -34,28 +34,11 @@
     in
     {
       nixosConfigurations = {
-        x86_64-iso = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./images/x86_64-iso.nix
-          ];
-        };
-        domU1 = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            # inputs.disko.nixosModules.default
-            # (import ./hosts/filesystems/disko-dom01.nix { device = "/dev/nvme0n1"; })
-            ./images/x86_64-domu.nix
-          ];
-        };
         dom01 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
             inputs.disko.nixosModules.default
-            (import ./hosts/filesystems/disko-dom01.nix { device = "/dev/nvme0n1"; })
             ./hosts/dom01.nix
           ];
         };
