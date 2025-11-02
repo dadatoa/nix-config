@@ -1,5 +1,6 @@
 {
-  description = "my nix configurations";
+  description = "my nix & nixos configs";
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     stable-nix.url = "github:NixOS/nixpkgs/nixos-25.05";
@@ -11,75 +12,37 @@
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs =
-    {
-    nixpkgs,
-    stable-nix,
-    staging-nix,
-    nix-darwin,
-    ... }@inputs:
-    let
-      forAllSystems =
-        function:
-        nixpkgs.lib.genAttrs [
-          "x86_64-linux"
-          "aarch64-linux"
-          "aarch64-darwin"
-        ]
-          (system: function nixpkgs.legacyPackages.${system});
+  outputs = inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        # To import an internal flake module: ./other.nix
+        # To import an external flake module:
+        #   1. Add foo to inputs
+        #   2. Add foo as a parameter to the outputs function
+        #   3. Add here: foo.flakeModule
 
-    in
-    {
-      nixosConfigurations = {
-        dom01 = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            inputs.disko.nixosModules.default
-            ./hosts/dom01.nix
-          ];
-        };
-
-        macmini = stable-nix.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            inputs.disko.nixosModules.default
-            (import ./hosts/macmini/disko.nix { device = "/dev/sdb"; })
-            ./hosts/macmini
-          ];
+      ];
+      
+      systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
+      
+      perSystem = { config, self', inputs', pkgs, system, ... }: {
+        packages.default = pkgs.hello;
+        devShells.default = pkgs.mkShell {
+          packages = with pkgs; [ glab just lazygit neovim starship tmux ]; 
+        shellHook = ''
+        eval "(starship init bash)"
+        '';
         };
       };
+      flake = {
+        # The usual flake attributes can be defined here, including system-
+        # agnostic ones like nixosModule and system-enumerating ones, although
+        # those are more easily expressed in perSystem.
 
-      darwinConfigurations = {
-        dadabook = nix-darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/dadabook
-          ];
-        };
       };
-
-      ## dev shells
-      devShells = forAllSystems (pkgs: {
-        default = pkgs.mkShell {
-          packages = [
-            pkgs.glab
-            pkgs.just
-            pkgs.lazygit
-            pkgs.neovim
-            pkgs.starship
-            pkgs.tmux
-          ];
-          shellHook = ''
-          eval "$(starship init bash)"
-          '';
-        };
-      });
     };
-
 }
