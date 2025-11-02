@@ -21,40 +21,9 @@
   # intall with tailscale standalone version
 
   environment.systemPackages = with pkgs; [
-    ansible
-    bat
-    carapace # shell auto-completion
-    coreutils
-    eza
-    ext4fuse
-    fd
-    fish
-    flyctl
-    fzf
-    gh
-    glab
-    lazygit
-    lima
+    ext4fuse ##
     ### LSP
     lua-language-server    
     ###
-    mosh
-    nmap
-    nodejs
-    nushell
-    opentofu
-    podman
-    rclone
-    ripgrep
-    rsync
-    sesh
-    starship
-    stow
-    tmux
-    wezterm
-    zoxide
-    ## charm
-    gum
-    wishlist
   ];
 }
