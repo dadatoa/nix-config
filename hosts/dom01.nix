@@ -53,8 +53,7 @@
   systemd.network.enable = true;
 
   systemd.network = {
-    ## declare vlan
-    netdevs = {
+    netdevs = {  ## declare virtual devices
       "20-xenbr0" = {
         netdevConfig = {
           Kind = "bridge";
