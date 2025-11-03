@@ -21,7 +21,7 @@
   # intall with tailscale standalone version
 
   environment.systemPackages = with pkgs; [
-    ext4fuse ##
+    ext4fuse ## did not find in brew
     ### LSP
     lua-language-server    
     ###

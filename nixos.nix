@@ -9,5 +9,10 @@
         ];
       };
     };
+    darwinConfigurations.dadabook = inputs.nix-darwin.lib.darwinSystem {
+      modules = [
+        ./hosts/dadabook
+      ];
+    };
   };
 }
