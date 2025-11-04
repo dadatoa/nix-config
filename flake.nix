@@ -35,8 +35,7 @@
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [ glab just lazygit neovim starship tmux ]; 
         shellHook = ''
-        eval "(starship init bash)"
-        source ~/.bashrc
+            source ~/.bashrc
         '';
         };
       };
