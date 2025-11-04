@@ -9,4 +9,4 @@ upgrade target:
 orb target: (orb-prep target) (upgrade target)
 
 test target:
-  sudo nixos-rebuild test --flake .#{{target}} && sudo shutdown -r +10
+  su -c 'nixos-rebuild test --flake .#{{target}} && sudo shutdown -r +10'

@@ -8,11 +8,11 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware-configurations/dom01.nix
-      ./filesystems/disko-dom01.nix
-      ../modules/01-nixos.nix
-      ../modules/administration.nix
-      ../modules/virtualisation/xen.nix ## Xen config
+      ./hardware-configuration.nix
+      ./disko.nix
+      ../../modules/01-nixos.nix
+      ../../modules/administration.nix
+      ../../modules/virtualisation/xen.nix ## Xen config
     ];
 
   boot.kernelParams = 
