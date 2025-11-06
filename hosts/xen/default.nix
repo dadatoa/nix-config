@@ -25,11 +25,11 @@
 
   boot.loader.systemd-boot.netbootxyz.enable = true;
   
-  users.users.chef =
+  users.users.nixos =
   {
       isNormalUser = true;
       uid = 1000;
-      description = "system admin";
+      description = "main user";
       extraGroups = [
         "wheel"
       ];
@@ -42,7 +42,7 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  networking.hostName = "dom01";
+  networking.hostName = "xen";
 
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
