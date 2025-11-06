@@ -54,24 +54,14 @@
 
   systemd.network = {
     netdevs = {  ## declare virtual devices
-      "20-xenbr0" = {
+      "20-xenbr0" = { # bridge
         netdevConfig = {
           Kind = "bridge";
           Name = "xenbr0";
           Description = "xen default bridge";
         };
       };
-      "20-vlan1" = {
-        netdevConfig = {
-          Kind = "vlan";
-          Name = "vlan1";
-          Description = "device config Access";
-        };
-        vlanConfig = {
-          Id = 1;
-        };
-      };
-      "20-vlan66" = {
+      "20-vlan66" = { # vlan
         netdevConfig = {
           Kind = "vlan";
           Name = "vlan66";
@@ -83,30 +73,21 @@
       };
     };
 
-    ## network interfaces
-    networks = {
+    networks = { ## network interfaces configurations
       "30-lan" = {
         enable = true;
         matchConfig.Name = "enp2s0";
         # networkConfig.DHCP = "ipv4";
         ## add vlans on physical interface
-        vlan = [ "vlan66" "vlan1" ];
+        vlan = [ "vlan66" "vlan1" ]; # keep both vlan in case 
       };
 
-      ## add virtual interfaces for vlan
+      ## vlan 66 + xen bridge config
       "40-vlan66" = {
         matchConfig.Name = "vlan66";
         networkConfig.DHCP = "ipv4";
         networkConfig.Bridge = "xenbr0"; ## attach to bridge
       };
-      ## add virtual interfaces for vlan
-      "40-vlan1" = {
-        matchConfig.Name = "vlan1";
-        networkConfig.DHCP = "ipv4";
-        address = [
-        ];
-      };
-      ## add bridge interface for vlans
       "40-xenbr0" = {
         matchConfig.Name = "xenbr0";
         networkConfig.DHCP = "ipv4";
