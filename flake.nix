@@ -19,7 +19,8 @@
   outputs = inputs@{ nixpkgs, stable-nix, staging-nix, disko, nix-darwin, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
-        ./nixos.nix
+        ./flake
+        # ./packages
         # To import an internal flake module: ./other.nix
         # To import an external flake module:
         #   1. Add foo to inputs

@@ -10,11 +10,13 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./disko.nix
-      ../../modules/01-nixos.nix
-      ../../modules/administration.nix
+      ../../modules/profiles/nixos_bm.nix
       ../../modules/virtualisation/xen.nix ## Xen config
     ];
 
+  # DO NOT TOUCH
+  system.stateVersion = "25.05"; # Did you read the comment?
+  
   boot.kernelParams = 
   [
     ### xen special boot kernel param
@@ -24,34 +26,15 @@
     ];
 
   boot.loader.systemd-boot.netbootxyz.enable = true;
-  
-  users.users.nixos =
-  {
-      isNormalUser = true;
-      uid = 1000;
-      description = "main user";
-      extraGroups = [
-        "wheel"
-      ];
-      # packages = with pkgs; [ ];
-      openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK8cVLhjGtC5ObYAMwXzp/QMag/wbuCJ3BHAns/Ei9DO dadatoa@dadabook"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBMGIPqzuoT/YXmjbgGP6knc1KMzEG0q9D0OjFbv5AOA anonymous@dadabook"
-      ];
-   };
 
   security.sudo.wheelNeedsPassword = false;
-
+  
   networking.hostName = "xen";
-
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
+  
   networking.firewall.enable = false;
-
   ## manage network with systemd
   networking.useNetworkd = true;
   systemd.network.enable = true;
-
   systemd.network = {
     netdevs = {  ## declare virtual devices
       "20-xenbr0" = { # bridge
@@ -72,7 +55,6 @@
         };
       };
     };
-
     networks = { ## network interfaces configurations
       "30-lan" = {
         enable = true;
@@ -81,7 +63,6 @@
         ## add vlans on physical interface
         vlan = [ "vlan66" "vlan1" ]; # keep both vlan in case 
       };
-
       ## vlan 66 + xen bridge config
       "40-vlan66" = {
         matchConfig.Name = "vlan66";
@@ -97,8 +78,5 @@
       };
     };
   };
-
-  # DO NOT TOUCH
-  system.stateVersion = "25.05"; # Did you read the comment?
 }
 
