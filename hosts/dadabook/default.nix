@@ -5,7 +5,7 @@
 {
   imports =
   [
-    ../../modules/bm.nix
+    ../../modules/00-base.nix
   ];
 
   # used for backwards compatibility

@@ -5,7 +5,7 @@
       macmini = inputs.nixpkgs.lib.nixosSystem {
         modules = [
           inputs.disko.nixosModules.default
-          ../hosts/macmini/default.nix
+          ../hosts/macmini
         ];
       };
       xen = inputs.nixpkgs.lib.nixosSystem {
