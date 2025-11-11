@@ -6,6 +6,7 @@
   imports =
   [
     ../../modules/00-base.nix
+    ../../modules/usefull_tuis.nix
   ];
 
   # used for backwards compatibility
@@ -22,7 +23,6 @@
 
   environment.systemPackages = with pkgs; [
     ext4fuse ## did not find in brew
-    neovim 
     ### LSP
     lua-language-server    
     ###
