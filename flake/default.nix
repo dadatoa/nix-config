@@ -14,6 +14,11 @@
           ../hosts/xen
         ];
       };
+      xen-vm1 = inputs.nixpkgs.lib.nixosSystem {
+        modules = [
+          ../hosts/vm
+        ];
+      };
     };
 
     darwinConfigurations.dadabook = inputs.nix-darwin.lib.darwinSystem {

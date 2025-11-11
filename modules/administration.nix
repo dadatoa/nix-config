@@ -11,6 +11,8 @@
   environment.systemPackages = with pkgs; [
     pciutils
     usbutils
+    e2fsprogs # ext2,3,4 filesytem
+    parted
     git
     wget
     nmap
