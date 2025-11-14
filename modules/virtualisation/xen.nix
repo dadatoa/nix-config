@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   ###
   ### Xen project boot options
@@ -35,4 +35,11 @@
       maxVCPUs = 2; # Allows the Domain 0 to use, at most, two CPU cores.
     };
   };
+
+  ## aditionnal packages
+  environment.systemPackages = with pkgs; [
+    qemu_xen
+    grub2_xen_pvh
+    grub2_pvhgrub_image
+  ];
 }
