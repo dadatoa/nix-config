@@ -39,7 +39,9 @@
   ## aditionnal packages
   environment.systemPackages = with pkgs; [
     qemu_xen
+    grub2_xen
     grub2_xen_pvh
     grub2_pvhgrub_image
+    grub2
   ];
 }
