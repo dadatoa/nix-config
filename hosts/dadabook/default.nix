@@ -5,7 +5,7 @@
 {
   imports =
   [
-    ../../modules/bm.nix
+    ../../modules/00-base.nix
   ];
 
   # used for backwards compatibility
@@ -22,6 +22,8 @@
 
   environment.systemPackages = with pkgs; [
     ext4fuse ## did not find in brew
+    neovim
+    starship
     ### LSP
     lua-language-server    
     ###
