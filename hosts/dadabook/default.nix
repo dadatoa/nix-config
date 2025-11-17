@@ -23,6 +23,8 @@
 
   environment.systemPackages = with pkgs; [
     ext4fuse ## did not find in brew
+    neovim
+    starship
     ### LSP
     lua-language-server    
     ###
