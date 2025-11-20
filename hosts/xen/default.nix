@@ -11,7 +11,7 @@
       ./hardware-configuration.nix
       ./disko.nix
       ../../modules/profiles/nixos_bm.nix
-      ../../modules/virtualisation/xen.nix ## Xen config
+      ../../modules/virtualisation ## Xen config
     ];
 
   # DO NOT TOUCH
