@@ -33,7 +33,7 @@
       perSystem = { config, self', inputs', pkgs, system, ... }: {
 
         packages = {
-          bootc-xen-pv = nixos-generators.nixosGenerate {
+          test-vm = nixos-generators.nixosGenerate {
             system = "x86_64-linux";
             format = "qcow";
             modules = [

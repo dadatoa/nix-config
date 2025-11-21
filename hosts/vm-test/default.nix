@@ -20,7 +20,7 @@
     # podman-bootc
   ];
 
-  networking.hostName = "nixbootc";
+  networking.hostName = "test-vm";
   
   systemd.network.networks."10-lan" = {
     matchConfig.Name = "enX0";
