@@ -17,16 +17,6 @@
   # Automatically log in at the virtual consoles.
   services.getty.autologinUser = "nixos";
 
-  # Some more help text.
-  services.getty.helpLine = ''
-    The "nixos" and "root" accounts have empty passwords.
-
-    To log in over ssh you must set a password for either "nixos" or "root"
-    with `passwd` (prefix with `sudo` for "root"), or add your public key to
-    /home/nixos/.ssh/authorized_keys or /root/.ssh/authorized_keys.
-
-    '';
-
   # allow nix-copy to live system
   nix.settings.trusted-users = [ "nixos" ];
 }

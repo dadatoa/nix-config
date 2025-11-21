@@ -6,7 +6,7 @@
     ../localisation.nix
     ../remote_access.nix
     ../usefull_tools.nix
-    ../users
+    ../users/default_user.nix
   ];
   
   # Bootloader.
