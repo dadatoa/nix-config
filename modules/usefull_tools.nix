@@ -5,12 +5,15 @@
   environment.systemPackages = with pkgs; [
     bat
     busybox
+    jq
     just
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    nushell
+    sesh
     skate # database key-value pair
     starship
     stow
     tmux
-    wezterm # to allow multiplexing ssh domain
+    zoxide
   ];
 }
