@@ -2,7 +2,7 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/virtualisation/xen-domU.nix")
-    ../00-base.nix
+    ../settings.nix
     ../users
     ../users/autologin.nix
     ../localisation.nix

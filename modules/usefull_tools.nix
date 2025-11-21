@@ -11,5 +11,6 @@
     starship
     stow
     tmux
+    wezterm # to allow multiplexing ssh domain
   ];
 }

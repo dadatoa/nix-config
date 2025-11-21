@@ -1,11 +1,11 @@
 { config, lib, pkgs, inputs, ... }:
 {
   imports = [
-    ../00-base.nix
+    ../settings.nix
     ../administration.nix
     ../localisation.nix
     ../remote_access.nix
-    ../usefull_tuis.nix
+    ../usefull_tools.nix
     ../users
   ];
   

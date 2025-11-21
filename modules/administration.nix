@@ -9,6 +9,7 @@
   nix.settings.auto-optimise-store = true;
 
   environment.systemPackages = with pkgs; [
+    busybox
     pciutils
     usbutils
     e2fsprogs # ext2,3,4 filesytem

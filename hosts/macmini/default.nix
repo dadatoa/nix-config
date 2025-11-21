@@ -4,7 +4,6 @@
 imports = [
     ./hardware-configuration.nix
     ../../modules/profiles/nixos_bm.nix
-    ../../modules/virtualisation/docker.nix
     ./networking.nix
     ./disko.nix
     ./containers.nix

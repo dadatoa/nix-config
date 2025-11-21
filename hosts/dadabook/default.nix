@@ -5,8 +5,8 @@
 {
   imports =
   [
-    ../../modules/00-base.nix
-    ../../modules/usefull_tuis.nix
+    ../../modules/settings.nix
+    ../../modules/usefull_tools.nix
   ];
 
   # used for backwards compatibility
