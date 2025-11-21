@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
-    ../profiles/xen_domU.nix
+    ../../modules/profiles/xen_domU.nix
   ];
 
   system.stateVersion = "25.11";
@@ -16,11 +16,11 @@
   users.users.nixos.extraGroups = [ "podman" ];
 
   environment.systemPackages = with pkgs; [
-    bootc
-    podman-bootc
+    # bootc
+    # podman-bootc
   ];
 
-  networking.hostName = nixos-pvh;
+  networking.hostName = "nixbootc";
   
   systemd.network.networks."10-lan" = {
     matchConfig.Name = "enX0";

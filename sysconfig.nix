@@ -28,13 +28,5 @@
     };
   };
   ### Generators AKA VMs configs
-  packages = {
-    bootc-xen-pv = inputs.nixos-generators.nixosGenerate {
-      format = "qcow"
-      modules = [
-        { virtualisation.diskSize = 10 * 1024; } # set size to 10G
-        ./hosts/bootc-xen-pv
-      ];
-    };
-  };
+
 }
