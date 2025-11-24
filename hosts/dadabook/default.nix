@@ -6,7 +6,6 @@
   imports =
   [
     ../../modules/settings.nix
-    ../../modules/usefull_tools.nix
   ];
 
   # used for backwards compatibility
