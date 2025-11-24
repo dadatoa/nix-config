@@ -1,5 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
 {
+  boot.supportedFilesystems.btrfs = true;
+
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -9,15 +11,16 @@
   nix.settings.auto-optimise-store = true;
 
   environment.systemPackages = with pkgs; [
+    btrfs-progs
     busybox
+    e2fsprogs # ext2,3,4 filesytem
+    git
+    nmap
+    parted
     pciutils
     usbutils
-    e2fsprogs # ext2,3,4 filesytem
-    parted
-    git
-    wget
-    nmap
     vim
+    wget
   ];
 
 } 

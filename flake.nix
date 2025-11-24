@@ -33,12 +33,12 @@
       perSystem = { config, self', inputs', pkgs, system, ... }: {
 
         packages = {
-          test-vm = nixos-generators.nixosGenerate {
+          vm-nixnas = nixos-generators.nixosGenerate {
             system = "x86_64-linux";
             format = "qcow";
             modules = [
               { virtualisation.diskSize = 10 * 1024; } # set size to 10G
-              ./hosts/vm-test
+              ./hosts/vm-nixnas
             ];
           };
           do-droplet = nixos-generators.nixosGenerate {

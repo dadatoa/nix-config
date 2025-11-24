@@ -2,6 +2,7 @@
 {
   imports = [
     ../users
+    ../administration.nix
   ];
   # Common configuration for Xen DomU NixOS virtual machines.
   boot = {
