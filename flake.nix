@@ -41,6 +41,13 @@
               ./hosts/vm-test
             ];
           };
+          do-droplet = nixos-generators.nixosGenerate {
+            system = "x86_64-linux";
+            format = "qcow";
+            modules = [
+              ./hosts/do-droplet
+            ];
+          };
         };
 
         devShells.default = pkgs.mkShell {
