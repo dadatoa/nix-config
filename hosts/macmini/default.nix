@@ -6,7 +6,7 @@ imports = [
     ../../modules/profiles/nixos_bm.nix
     ./networking.nix
     ./disko.nix
-    ./containers.nix
+    # ./containers.nix
   ];
 
   ## boot fail on mac mini without these
@@ -25,7 +25,6 @@ imports = [
 
   # add some packages that are not present in baseConfig.nix
   environment.systemPackages = with pkgs; [
-    starship
   ];
 
 
