@@ -2,7 +2,7 @@
 {
   flake = {
     nixosConfigurations = {
-      macmini = inputs.nixpkgs.lib.nixosSystem {
+      macmini = inputs.staging-nix.lib.nixosSystem {
         modules = [
           inputs.disko.nixosModules.default
           ./hosts/macmini
