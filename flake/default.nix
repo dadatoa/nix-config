@@ -5,25 +5,25 @@
       macmini = inputs.staging-nix.lib.nixosSystem {
         modules = [
           inputs.disko.nixosModules.default
-          ./hosts/macmini
+          ../hosts/macmini
         ];
       };
       xen = inputs.staging-nix.lib.nixosSystem {
         modules = [
           inputs.disko.nixosModules.default
-          ./hosts/xen
+          ../hosts/xen
         ];
       };
       xen-vm1 = inputs.nixpkgs.lib.nixosSystem {
         modules = [
-          ./hosts/vm
+          ../hosts/vm
         ];
       };
     };
 
     darwinConfigurations.dadabook = inputs.nix-darwin.lib.darwinSystem {
       modules = [
-        ./hosts/dadabook
+        ../hosts/dadabook
       ];
     };
   };

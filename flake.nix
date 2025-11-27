@@ -25,7 +25,7 @@
   outputs = inputs@{ nixos-generators, nixpkgs, stable-nix, staging-nix, disko, nix-darwin, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
-        ./sysconfig.nix
+        ./flake
       ];
       
       systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
