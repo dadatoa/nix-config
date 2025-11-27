@@ -8,7 +8,7 @@
           ./hosts/macmini
         ];
       };
-      xen = inputs.nixpkgs.lib.nixosSystem {
+      xen = inputs.staging-nix.lib.nixosSystem {
         modules = [
           inputs.disko.nixosModules.default
           ./hosts/xen
