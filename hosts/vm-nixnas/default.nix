@@ -2,7 +2,6 @@
 {
   imports = [
     ../../modules/profiles/xen_domU.nix
-    ./filesystems.nix
   ];
 
   system.stateVersion = "25.11";
@@ -21,7 +20,7 @@
     # podman-bootc
   ];
 
-  networking.hostName = "vm-nixnas";
+  networking.hostName = "vm-nas";
   
   systemd.network.networks."10-lan" = {
     matchConfig.Name = "enX0";

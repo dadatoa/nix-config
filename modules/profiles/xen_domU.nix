@@ -2,7 +2,11 @@
 {
   imports = [
     ../users
+    ../settings.nix
     ../administration.nix
+    ../localisation.nix
+    ../remote_access.nix
+    ../usefull_tools.nix
   ];
   # Common configuration for Xen DomU NixOS virtual machines.
   boot = {

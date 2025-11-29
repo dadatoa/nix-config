@@ -14,9 +14,10 @@
           ../hosts/xen
         ];
       };
-      xen-vm1 = inputs.nixpkgs.lib.nixosSystem {
+      vm-nas = inputs.nixpkgs.lib.nixosSystem {
         modules = [
-          ../hosts/vm
+          ../hosts/vm-nixnas
+          ../hosts/vm-nixnas/hardware-configuration.nix
         ];
       };
     };
