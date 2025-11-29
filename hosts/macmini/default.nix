@@ -27,11 +27,11 @@ imports = [
   environment.systemPackages = with pkgs; [
   ];
 
-
+  services.glusterfs.enable = true;
+  
   users.users.nixos = {
       extraGroups = [ "docker" ];
   };
-
   
   security.sudo.wheelNeedsPassword = false;
   
