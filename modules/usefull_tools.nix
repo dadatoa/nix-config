@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     bat
     busybox
+    chezmoi # to replce stow for dotfiles
     jq
     just
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -12,7 +13,7 @@
     sesh
     skate # database key-value pair
     starship
-    stow
+    stow # to be replaced by chezmoi
     tmux
     zoxide
   ];
