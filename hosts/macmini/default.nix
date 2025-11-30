@@ -6,6 +6,7 @@ imports = [
     ../../modules/profiles/nixos_bm.nix
     ./networking.nix
     ./disko.nix
+    ./glusterfs.nix
     # ./containers.nix
   ];
 
