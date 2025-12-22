@@ -21,9 +21,39 @@
   # intall with tailscale standalone version
 
   environment.systemPackages = with pkgs; [
+    carapace
+    chezmoi
+    coreutils
+    cosign
+    docker
     ext4fuse ## did not find in brew
+    eza
+    fd
+    flyctl
+    fzf
+    gh
+    glab
+    glow
+    gum
+    just
+    lazygit
     neovim
+    nmap
+    nushell
+    opentofu
+    podman
+    rclone
+    ripgrep
+    rsync
+    sesh
+    skate
     starship
+    stow
+    tldr
+    tmux
+    tree-sitter
+    wishlist
+    zoxide
     ### LSP
     lua-language-server    
     ###
