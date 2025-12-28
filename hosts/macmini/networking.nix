@@ -34,7 +34,7 @@ in
       "30-lan" = {
         enable = true;
         matchConfig.Name = vars.interface0;
-        # networkConfig.DHCP = "ipv4";
+        networkConfig.DHCP = "ipv4";
         ## add vlans on physical interface
         vlan = [
           "vlan66"
