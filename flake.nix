@@ -16,7 +16,7 @@
 
   };
 
-  outputs = inputs@{ nixos-generators, nixpkgs, stable-nix, staging-nix, disko, nix-darwin, flake-parts, ... }:
+  outputs = inputs@{ nixpkgs, stable-nix, disko, nix-darwin, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         ./hosts
