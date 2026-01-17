@@ -5,6 +5,7 @@ imports = [
     ./hardware-configuration.nix
     ../../modules/profiles/nixos_bm.nix
     ./networking.nix
+    # ./dhcp-kea.nix
     ./disko.nix
     ./glusterfs.nix
     # ./containers.nix

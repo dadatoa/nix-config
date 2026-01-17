@@ -40,18 +40,18 @@
       ## add virtual interfaces for vlan
       "30-vlan1" = { 
         matchConfig.Name = "vlan1";
-        # address = [ "10.10.10.1/28" ];
-        networkConfig.DHCP = "ipv4";
+        address = [ "192.168.8.10/24" ];
+        # networkConfig.DHCP = "ipv4";
       };
       "30-vlan66" = { 
         matchConfig.Name = "vlan66";
-        # address = [ "10.10.10.66/27" ];
-        networkConfig.DHCP = "ipv4";
+        address = [ "192.168.8.20/24" ];
+        # networkConfig.DHCP = "ipv4";
       };
       "30-vlan100" = { 
         matchConfig.Name = "vlan100";
-        # address = [ "10.10.10.100/27" ];
-        networkConfig.DHCP = "ipv4";
+        address = [ "192.168.8.30/24" ];
+        # networkConfig.DHCP = "ipv4";
       };
     };
   };
