@@ -59,7 +59,7 @@
       "30-lan" = {
         enable = true;
         matchConfig.Name = "enp2s0";
-        # networkConfig.DHCP = "ipv4";
+        networkConfig.DHCP = "ipv4";
         ## add vlans on physical interface
         vlan = [ "vlan66" "vlan1" ]; # keep both vlan in case 
       };
