@@ -8,7 +8,7 @@ imports = [
     # ./dhcp-kea.nix
     ./disko.nix
     ./glusterfs.nix
-    # ./containers.nix
+    ./containers.nix
   ];
 
   ## boot fail on mac mini without these
@@ -31,11 +31,10 @@ imports = [
 
   services.glusterfs.enable = true;
   
-  users.users.nixos = {
-      extraGroups = [ "docker" ];
+  users.users.operateur = {
+    isNormalUser  = true;
+    uid = 1000;
   };
-  
-  security.sudo.wheelNeedsPassword = false;
   
   system.stateVersion = "25.05"; # Did you read the comment?
 }

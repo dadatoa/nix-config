@@ -1,19 +1,17 @@
 { pkgs, config, lib, ... }:
 
 {
+  virtualisation.docker.enable = true;
+  virtualisation.docker.storageDriver = "btrfs";
+  
+# docker rootless
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+# enable lingering for operateur to le rootless container running
+  users.users.operateur.linger = true;
+
   virtualisation.oci-containers.containers = {
-    netbootxyz = {
-      volumes = [
-        "/appdata/netbootxyz/config:/config"
-        "/appdata/netbootxyz/assets:/assets"
-        ];
-      environment = {};
-      ports = [
-        "3000:3000"
-        "69:69/udp"
-        "8080:80"
-      ];
-      image = "ghcr.io/netbootxyz/netbootxyz" ;
-    };
   };
 }

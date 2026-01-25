@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 {
-  users.users.nixos = {
+  users.users.operateur = {
     isNormalUser = true;
     uid = 1000;
     description = "main user";
     extraGroups = [
-      "wheel"
+      "docker"
       "video"
     ];
     # packages = with pkgs; [ ];
