@@ -44,35 +44,28 @@
           Description = "xen default bridge";
         };
       };
-      "20-vlan66" = { # vlan
-        netdevConfig = {
-          Kind = "vlan";
-          Name = "vlan66";
-          Description = "LAN Access";
-        };
-        vlanConfig = {
-          Id = 66;
-        };
-      };
+    #   "20-vlan66" = { # vlan
+    #     netdevConfig = {
+    #       Kind = "vlan";
+    #       Name = "vlan66";
+    #       Description = "LAN Access";
+    #     };
+    #     vlanConfig = {
+    #       Id = 66;
+    #     };
+    #   };
     };
     networks = { ## network interfaces configurations
       "30-lan" = {
         enable = true;
         matchConfig.Name = "enp2s0";
         networkConfig.DHCP = "ipv4";
+        networkConfig.Bridge = "xenbr0";
       };
-      ## vlan 66 + xen bridge config
-      "40-vlan66" = {
-        matchConfig.Name = "vlan66";
-        networkConfig.DHCP = "ipv4";
-        networkConfig.Bridge = "xenbr0"; ## attach to bridge
-      };
+
       "40-xenbr0" = {
         matchConfig.Name = "xenbr0";
         networkConfig.DHCP = "ipv4";
-        linkConfig = {
-          RequiredForOnline = "carrier";
-        };
       };
     };
   };
