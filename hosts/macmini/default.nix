@@ -7,6 +7,7 @@ imports = [
     ./networking.nix
     # ./dhcp-kea.nix
     ./disko.nix
+    ./firewall.nix
     ./glusterfs.nix
     ./containers.nix
   ];
@@ -30,9 +31,10 @@ imports = [
   ];
 
   services.glusterfs.enable = true;
+  services.technitium-dns-server.enable = true;
   
   users.users.operateur = {
-    isNormalUser  = true;
+    isNormalUser = true;
     uid = 1000;
   };
   
