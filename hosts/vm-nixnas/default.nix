@@ -14,8 +14,6 @@
     };
   };
 
-  users.users.nixos.extraGroups = [ "podman" ];
-
   environment.systemPackages = with pkgs; [
     # bootc
     # podman-bootc
