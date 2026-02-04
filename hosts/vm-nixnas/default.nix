@@ -2,9 +2,10 @@
 {
   imports = [
     ../../modules/profiles/xen_domU.nix
+    ./hardware-configuration.nix
   ];
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 
   virtualisation = {
     containers.enable = true;

@@ -15,8 +15,8 @@
   };
 
   # Automatically log in at the virtual consoles.
-  services.getty.autologinUser = "nixos";
+  services.getty.autologinUser = "operateur";
 
   # allow nix-copy to live system
-  nix.settings.trusted-users = [ "nixos" ];
+  nix.settings.trusted-users = [ "operateur" ];
 }

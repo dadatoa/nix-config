@@ -14,6 +14,11 @@
           ./xen
         ];
       };
+      nas = inputs.stable-nix.lib.nixosSystem {
+        modules = [
+          ./vm-nixnas
+        ];
+      };
     };
 
     darwinConfigurations.dadabook = inputs.nix-darwin.lib.darwinSystem {
