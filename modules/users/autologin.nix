@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:{
   
   # Allow the graphical user to login without password
-  users.users.nixos.initialHashedPassword = "";
+  users.users.operateur.initialHashedPassword = "";
   # Allow the user to log in as root without a password.
   users.users.root.initialHashedPassword = "";
 
