@@ -12,9 +12,6 @@
   services.tailscale = {
     enable = true;
     authKeyFile = "/run/secrets/tailscale_key";
-    authKeyParameters.ephemeral = false;
-    authKeyParameters.preauthorized = true;
-    extraUpFlags = [ "--ssh" "--advertise-tags=tag:testlab" ];
   };
 
   ## enable mdns autodiscovery
