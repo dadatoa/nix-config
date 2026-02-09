@@ -6,8 +6,10 @@
     bat
     busybox
     chezmoi # to replce stow for dotfiles
+    emacs
     glab
     gh
+    gum
     jq
     just
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
