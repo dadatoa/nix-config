@@ -14,9 +14,9 @@
           ./xen
         ];
       };
-      nas = inputs.stable-nix.lib.nixosSystem {
+      nixtest = inputs.stable-nix.lib.nixosSystem {
         modules = [
-          ./vm-nixnas
+          ./vm-nixtest
         ];
       };
     };

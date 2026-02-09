@@ -2,9 +2,10 @@
 {
   imports = [
     ../../modules/profiles/xen_domU.nix
+    ./hardware-configuration.nix
   ];
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 
   virtualisation = {
     containers.enable = true;
@@ -13,17 +14,17 @@
     };
   };
 
-  users.users.nixos.extraGroups = [ "podman" ];
-
   environment.systemPackages = with pkgs; [
     # bootc
     # podman-bootc
   ];
 
-  networking.hostName = "test-vm";
+  networking.hostName = "nixtest";
   
   systemd.network.networks."10-lan" = {
     matchConfig.Name = "enX0";
     networkConfig.DHCP = "ipv4";
   };
+
+  services.glusterfs.enable = true;
 }
