@@ -37,6 +37,7 @@ imports = [
     isNormalUser = true;
     uid = 1000;
   };
+  security.sudo.wheelNeedsPassword = false;
   
   system.stateVersion = "25.05"; # Did you read the comment?
 }
