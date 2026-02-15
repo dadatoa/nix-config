@@ -5,8 +5,10 @@
   environment.systemPackages = with pkgs; [
     bat
     busybox
+    carapace
     chezmoi # to replce stow for dotfiles
     emacs
+    fish
     glab
     gh
     gum
