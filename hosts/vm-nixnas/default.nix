@@ -3,6 +3,7 @@
   imports = [
     ../../modules/profiles/xen_domU.nix
     ./hardware-configuration.nix
+    ./services
   ];
 
   system.stateVersion = "26.05";
