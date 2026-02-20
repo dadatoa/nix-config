@@ -22,6 +22,16 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/data" =
+    { device = "/dev/disk/by-uuid/2d204434-bca6-4901-ba89-f720112c9dca";
+      fsType = "btrfs";
+    };
+
+  fileSystems."/media" =
+    { device = "/dev/disk/by-uuid/1fe0c325-b915-4ab2-8525-ef8968e4f6bd";
+      fsType = "btrfs";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/07e7f1d5-9692-4e80-aa86-2eef1ecaffe1"; }
     ];

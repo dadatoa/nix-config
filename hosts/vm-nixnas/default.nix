@@ -19,7 +19,7 @@
     # podman-bootc
   ];
 
-  networking.hostName = "vm-nas";
+  networking.hostName = "nas";
   
   systemd.network.networks."10-lan" = {
     matchConfig.Name = "enX0";
